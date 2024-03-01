@@ -2,7 +2,7 @@
 {
     public enum Roshambo
     {
-        Rock,
+        Rock = 1,
         Paper,
         Scissors
     }

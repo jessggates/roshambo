@@ -32,7 +32,7 @@ namespace roshambo_lab
                     RoshamboValue = Roshambo.Scissors; 
                     break;
                 default:
-                    Console.WriteLine("That is an invalid option. Please choose r, p, or s.");
+                    Console.WriteLine("That is an invalid option. Please choose R, P, or S.");
                     break;
             }
             

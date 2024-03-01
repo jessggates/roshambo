@@ -23,8 +23,8 @@ namespace roshambo_lab
 
             int randomOption = random.Next(1,4);
             Roshambo roshambo = (Roshambo)randomOption;
-
-            return roshambo;
+            RoshamboValue = roshambo;
+            return RoshamboValue;
         }
     }
 }
