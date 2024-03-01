@@ -1,4 +1,6 @@
 ﻿using roshambo_lab;
+using System.ComponentModel.Design;
+using System.Text;
 
 
 
@@ -33,11 +35,13 @@ while (playAgain)
             rockPlayer.GenerateRoshambo();
             Console.WriteLine($"{humanPlayer.Name}: {humanPlayer.RoshamboValue}");
             Console.WriteLine($"{rockPlayer.Name}: {rockPlayer.RoshamboValue}");
+            Console.WriteLine($"{ ReturnResult(humanPlayer.RoshamboValue, rockPlayer.RoshamboValue)}");
             break;
         case "2":
             randomPlayer.GenerateRoshambo();
             Console.WriteLine($"{humanPlayer.Name}: {humanPlayer.RoshamboValue}");
             Console.WriteLine($"{randomPlayer.Name}: {randomPlayer.RoshamboValue}");
+            Console.WriteLine($"{ReturnResult(humanPlayer.RoshamboValue, randomPlayer.RoshamboValue)}");
             break;
         default:
             Console.WriteLine($"That is not a valid choice. Please enter 1 ({rockPlayer.Name}) or 2 ({randomPlayer.Name}).");
@@ -45,6 +49,21 @@ while (playAgain)
     }
     Console.WriteLine("Would you like to play again? (y/n)");
     playAgain = Console.ReadLine() == "y";
+}
+
+static string ReturnResult(Roshambo firstValue, Roshambo secondValue)
+{
+
+    if (firstValue == secondValue)
+        return "Draw";
+    else if (
+        (firstValue == Roshambo.Rock && secondValue == Roshambo.Scissors) ||
+        (firstValue == Roshambo.Scissors && secondValue == Roshambo.Paper) ||
+        (firstValue == Roshambo.Paper && secondValue == Roshambo.Rock)
+        )
+        return "Win!";
+    else
+        return "Lose";
 }
 
 Console.ReadKey();
