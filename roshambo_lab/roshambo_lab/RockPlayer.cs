@@ -10,16 +10,16 @@ namespace roshambo_lab
     {
         public override string Name { get; set; } 
 
-        public override string RoshamboValue { get; set; }
+        public override Roshambo RoshamboValue { get; set; }
 
         public RockPlayer(string name)
         {
             Name = name;
         }
 
-        public override string GenerateRoshambo()
+        public override Roshambo GenerateRoshambo()
         {
-            RoshamboValue = Roshambo.Rock.ToString();
+            RoshamboValue = Roshambo.Rock;
             return RoshamboValue;
         }
     }

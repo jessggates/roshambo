@@ -10,21 +10,21 @@ namespace roshambo_lab
     {
         public override string Name { get; set; }
 
-        public override string RoshamboValue { get; set; }
+        public override Roshambo RoshamboValue { get; set; }
 
         public RandomPlayer(string name)
         {
             Name = name;
         }
 
-        public override string GenerateRoshambo()
+        public override Roshambo GenerateRoshambo()
         {
-            string[] options = { "rock", "paper", "scissors" };
             Random random = new Random();
 
-            string randomOption = options[random.Next(options.Length)];
+            int randomOption = random.Next(1,4);
+            Roshambo roshambo = (Roshambo)randomOption;
 
-            return randomOption;
+            return roshambo;
         }
     }
 }

@@ -10,15 +10,32 @@ namespace roshambo_lab
     {
         public override string Name { get; set; }
 
-        public override string RoshamboValue { get; set; }
+        public override Roshambo RoshamboValue { get; set; }
 
+        public string UserChoice { get; set; }
         public HumanPlayer(string name)
         {
             Name = name;
         }
 
-        public override string GenerateRoshambo()
+        public override Roshambo GenerateRoshambo()
         {
+            switch(UserChoice)
+            {
+                case "r":
+                    RoshamboValue = Roshambo.Rock;
+                    break;
+                case "p":
+                    RoshamboValue = Roshambo.Paper;
+                    break;
+                case "s":
+                    RoshamboValue = Roshambo.Scissors; 
+                    break;
+                default:
+                    Console.WriteLine("That is an invalid option. Please choose r, p, or s.");
+                    break;
+            }
+            
             return RoshamboValue;
         }
     }
