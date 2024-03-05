@@ -31,9 +31,6 @@ namespace roshambo_lab
                 case "s":
                     RoshamboValue = Roshambo.Scissors; 
                     break;
-                default:
-                    Console.WriteLine("That is an invalid option. Please choose R, P, or S.");
-                    break;
             }
             
             return RoshamboValue;
